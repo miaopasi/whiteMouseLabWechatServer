@@ -7,5 +7,9 @@ from django.contrib import admin
 
 from .models import Shop,Comment
 
-admin.site.register(Shop)
+class ShopAdmin(admin.ModelAdmin):
+    fields = ['update_date', 'shop_name']
+    list_display = ('shop_name', 'update_date', 'was_update_recently')
+
+admin.site.register(Shop, ShopAdmin)
 admin.site.register(Comment)
