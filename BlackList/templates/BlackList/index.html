@@ -5,6 +5,13 @@
     <title></title>
 </head>
 <body>
-
+<h1>Shops</h1>
+<ul>
+{% for shop in latest_shop_list %}
+    <li>{{ shop.update_date|date }} - <a href="{% url 'detail' shop.id %}">{{ shop.shop_name }}</a></li>
+{% empty %}
+    <li>No shops yet.</li>
+{% endfor %}
+</ul>
 </body>
 </html>
