@@ -36,15 +36,12 @@ class IndexView(generic.ListView):
 #     return HttpResponse(s)
 
 
-
-
-
 def detail(request, shop_id):
-    try:
-        shop = Shop.objects.get(pk=shop_id)
-    except Shop.DoesNotExist:
-        raise Http404("Shop does not exist")
-    return render(request, 'BlackList/detail.html', {'shop': shop})
+	try:
+		shop = Shop.objects.get(pk=shop_id)
+	except Shop.DoesNotExist:
+		raise Http404("Shop does not exist")
+	return render(request, 'BlackList/detail.html', {'shop': shop})
 
 
 def crawlerStatus(request):
