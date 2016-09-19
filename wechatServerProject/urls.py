@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-
+from settings import STATIC_ROOT
 
 urlpatterns = [
+	# url(r'^static/(?P<path>.*)$', 'django.views.static.serve',{'document_root':STATIC_ROOT }), 
     url(r'^blacklist/',include('BlackList.urls')),
     url(r'^admin/', admin.site.urls),
 ]

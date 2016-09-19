@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 """
 
 import os
-
+# from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -117,5 +117,13 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/dev/howto/static-files/
-
+STATIC_ROOT = '/home/www/static/'
 STATIC_URL = '/static/'
+# STATICFILES_FINDERS = (
+# 'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+# 'django.contrib.staticfiles.finders.FileSystemFinder',
+# )
+# # TEMPLATE_CONTEXT_PROCESSORS = TCP + (
+# 'django.core.context_processors.request',
+# )
+# STATIC_URL = '/static/'
